@@ -16,10 +16,7 @@ Docker&#xD;
 https://github.com/apache/couchdb-docker&#xD;
 &#xD;
 Docs&#xD;
-https://docs.couchdb.org&#xD;
-&#xD;
-By&#xD;
-https://bdrtec.com.br</Overview>
+https://docs.couchdb.org</Overview>
   <Category>Other:</Category>
   <WebUI>http://[IP]:[PORT:5984]/_utils</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/spants/unraidtemplates/master/Spants/CouchDB-v2.x.xml</TemplateURL>
