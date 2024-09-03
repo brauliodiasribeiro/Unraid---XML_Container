@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>LangFlow</Name>
+  <Repository>langflowai/langflow</Repository>
+  <Registry>https://hub.docker.com/r/langflowai/langflow</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/langflow-ai/langflow</Support>
+  <Project>https://github.com/langflow-ai/langflow</Project>
+  <Overview>LangFlow Latest&#xD;
+Is a free, no-code solution for deployment of powerful LLM apps.&#xD;
+Create flows dragging and connecting components.&#xD;
+&#xD;
+Requires&#xD;
+Postgres 16</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:7860]</WebUI>
+  <TemplateURL/>
+  <Icon>https://avatars.githubusercontent.com/u/85702467?s=48&amp;amp;v=4</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725400294</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="WebUI" Target="7860" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">7860</Config>
+  <Config Name="Appdata" Target="/var/lib/langflow" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/langflow/</Config>
+  <Config Name="Database" Target="LANGFLOW_DATABASE_URL" Default="postgresql://USER:PASSWORD@postgres:5432/langflow" Mode="" Description="Postgres user default: postgres" Type="Variable" Display="always" Required="true" Mask="false">postgresql://postgres:PASSWORD@postgres:5432/langflow</Config>
+  <Config Name="LangFlow User" Target="LANGFLOW_SUPERUSER" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
+  <Config Name="LangFlow Password" Target="LANGFLOW_SUPERUSER_PASSWORD" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
+</Container>
