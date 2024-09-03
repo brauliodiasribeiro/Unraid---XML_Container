@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Obsidian</Name>
+  <Repository>lscr.io/linuxserver/obsidian</Repository>
+  <Registry>https://github.com/orgs/linuxserver/packages/container/package/obsidian</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/linuxserver/docker-obsidian/issues/new/choose</Support>
+  <Project>https://obsidian.md</Project>
+  <Overview>Obsidian Latest&#xD;
+A note-taking app that lets you create, link, and organize your notes on your device, with hundreds of plugins and themes to customize your workflow. You can also publish your notes online, access them offline, and sync them securely with end-to-end encryption.&#xD;
+&#xD;
+Require&#xD;
+CouchDB</Overview>
+  <Category>Other:</Category>
+  <WebUI>http://[IP]:[PORT:3000]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/templates/master/unraid/obsidian.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/obsidian-logo.png</Icon>
+  <ExtraParams>--shm-size=1gb</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725400863</DateInstalled>
+  <DonateText>Donations</DonateText>
+  <DonateLink>https://www.linuxserver.io/donate</DonateLink>
+  <Requires/>
+  <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Obsidian desktop gui." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Port: 3001" Target="3001" Default="3001" Mode="tcp" Description="Obsidian desktop gui HTTPS." Type="Port" Display="always" Required="true" Mask="false">3002</Config>
+  <Config Name="/dev/dri" Target="{1}" Default="/dev/dri" Mode="{3}" Description="Add this for GL support (Linux hosts only)" Type="Device" Display="always" Required="false" Mask="false">/dev/dri</Config>
+  <Config Name="DOCKER_MODS" Target="DOCKER_MODS" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">ghcr.io/tailscale-dev/docker-mod:main</Config>
+  <Config Name="TAILSCALE_STATE_DIR" Target="TAILSCALE_STATE_DIR" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">/var/lib/tailscale</Config>
+  <Config Name="TAILSCALE_HOSTNAME" Target="TAILSCALE_HOSTNAME" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">obsidian</Config>
+  <Config Name="TAILSCALE_AUTHKEY" Target="TAILSCALE_AUTHKEY" Default="" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">GENERATE-YOUR</Config>
+  <Config Name="/var/lib/tailscale" Target="/var/lib/tailscale" Default="/mnt/user/appdata/obsidian/tailscale" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/obsidian/tailscale</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/Obsidian/" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Obsidian/</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/obsidian" Mode="rw" Description="Users home directory in the container, stores program settings and files." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/obsidian</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="022" Mode="{3}" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">022</Config>
+</Container>
