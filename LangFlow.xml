@@ -38,7 +38,7 @@ https://bdrtec.com.br</Overview>
   <Requires/>
   <Config Name="WebUI" Target="7860" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">7860</Config>
   <Config Name="Appdata" Target="/var/lib/langflow" Default="" Mode="rw" Description="Data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/langflow/</Config>
-  <Config Name="Database" Target="LANGFLOW_DATABASE_URL" Default="postgresql://USER:PASSWORD@postgres:5432/langflow" Mode="" Description="Postgres user default: postgres" Type="Variable" Display="always" Required="false" Mask="false">postgresql://USER:PASSWORD@postgres:5432/langflow</Config>
+  <Config Name="Database" Target="LANGFLOW_DATABASE_URL" Default="postgresql://USER:PASSWORD@postgres:5432/langflow" Mode="" Description="Postgres user default: postgres" Type="Variable" Display="always" Required="true" Mask="false">postgresql://USER:PASSWORD@postgres:5432/langflow</Config>
   <Config Name="LangFlow User" Target="LANGFLOW_SUPERUSER" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
   <Config Name="LangFlow Password" Target="LANGFLOW_SUPERUSER_PASSWORD" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
 </Container>
