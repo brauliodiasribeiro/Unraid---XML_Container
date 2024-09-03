@@ -7,16 +7,10 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://forums.unraid.net/topic/173032-my-unraid-by-brauliodiasribeiro</Support>
   <Project>https://github.com/apache/couchdb-docker</Project>
   <Overview>CouchDb Latest&#xD;
-Document-oriented NoSQL database.&#xD;
-&#xD;
-Docker&#xD;
-https://github.com/apache/couchdb-docker&#xD;
-&#xD;
-Docs&#xD;
-https://docs.couchdb.org</Overview>
+Document-oriented NoSQL database.</Overview>
   <Category>Other:</Category>
   <WebUI>http://[IP]:[PORT:5984]/_utils</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/spants/unraidtemplates/master/Spants/CouchDB-v2.x.xml</TemplateURL>
@@ -24,55 +18,18 @@ https://docs.couchdb.org</Overview>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1724209143</DateInstalled>
+  <DateInstalled>1725344374</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires/>
+  <Requires>By https://bdrtec.com.br</Requires>
   <Config Name="WebUI" Target="5984" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5984</Config>
-  <Config Name="Appdata" Target="/opt/couchdb/data/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/</Config>
-  <Config Name="Config" Target="/opt/couchdb/etc/local.d/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/config/</Config>
-  <Config Name="Db User" Target="COUCHDB_USER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
-  <Config Name="Db Pass" Target="COUCHDB_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
-</Container>
-
-<?xml version="1.0"?>
-<Container version="2">
-  <Name>CouchDb</Name>
-  <Repository>apache/couchdb</Repository>
-  <Registry>https://github.com/apache/couchdb-docker</Registry>
-  <Network>bridge</Network>
-  <MyIP/>
-  <Shell>sh</Shell>
-  <Privileged>false</Privileged>
-  <Support/>
-  <Project>https://github.com/apache/couchdb-docker</Project>
-  <Overview>CouchDb Latest&#xD;
-Document-oriented NoSQL database.&#xD;
-&#xD;
-Docker&#xD;
-https://github.com/apache/couchdb-docker&#xD;
-&#xD;
-Docs&#xD;
-https://docs.couchdb.org</Overview>
-  <Category>Other:</Category>
-  <WebUI>http://[IP]:[PORT:5984]/_utils</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/spants/unraidtemplates/master/Spants/CouchDB-v2.x.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/brauliodiasribeiro/Unraid-Container-XML/main/favicon_couchdb.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1724209143</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Requires/>
-  <Config Name="WebUI" Target="5984" Default="" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5984</Config>
-  <Config Name="Appdata" Target="/opt/couchdb/data/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/</Config>
-  <Config Name="Config" Target="/opt/couchdb/etc/local.d/" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/config/</Config>
-  <Config Name="Db User" Target="COUCHDB_USER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
-  <Config Name="Db Pass" Target="COUCHDB_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Appdata" Target="/opt/couchdb/data/" Default="/mnt/user/appdata/couchdb/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/</Config>
+  <Config Name="Config" Target="/opt/couchdb/etc/local.d/" Default="/mnt/user/appdata/couchdb/config/" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/couchdb/config/</Config>
+  <Config Name="Database User" Target="COUCHDB_USER" Default="admin" Mode="" Description="Default: admin" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+  <Config Name="Database Password" Target="COUCHDB_PASSWORD" Default="" Mode="" Description="Set your password" Type="Variable" Display="always" Required="true" Mask="false"/>
 </Container>
 
 <!--
 Command
-/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='CouchDb' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="IndiceTokyo" -e HOST_CONTAINERNAME="CouchDb" -e 'COUCHDB_USER'='admin' -e 'COUCHDB_PASSWORD'='' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:5984]/_utils' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid-Container-XML/main/favicon_couchdb.png' -p '5984:5984/tcp' -v '/mnt/user/appdata/couchdb/':'/opt/couchdb/data/':'rw' -v '/mnt/user/appdata/couchdb/config/':'/opt/couchdb/etc/local.d/':'rw' 'apache/couchdb' 
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='CouchDb' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="BdrTec" -e HOST_CONTAINERNAME="CouchDb" -e 'COUCHDB_USER'='admin' -e 'COUCHDB_PASSWORD'='' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:5984]/_utils' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid-Container-XML/main/favicon_couchdb.png' -p '5984:5984/tcp' -v '/mnt/user/appdata/couchdb/':'/opt/couchdb/data/':'rw' -v '/mnt/user/appdata/couchdb/config/':'/opt/couchdb/etc/local.d/':'rw' 'apache/couchdb'
 -->
