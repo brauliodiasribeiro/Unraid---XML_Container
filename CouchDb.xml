@@ -72,4 +72,7 @@ https://docs.couchdb.org</Overview>
   <Config Name="Db Pass" Target="COUCHDB_PASSWORD" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
 </Container>
 
+<!--
+Command
 /usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='CouchDb' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="IndiceTokyo" -e HOST_CONTAINERNAME="CouchDb" -e 'COUCHDB_USER'='admin' -e 'COUCHDB_PASSWORD'='' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:5984]/_utils' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid-Container-XML/main/favicon_couchdb.png' -p '5984:5984/tcp' -v '/mnt/user/appdata/couchdb/':'/opt/couchdb/data/':'rw' -v '/mnt/user/appdata/couchdb/config/':'/opt/couchdb/etc/local.d/':'rw' 'apache/couchdb' 
+-->
