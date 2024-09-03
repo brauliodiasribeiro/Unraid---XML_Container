@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Icloud</Name>
+  <Repository>mandarons/icloud-drive</Repository>
+  <Registry>https://hub.docker.com/r/mandarons/icloud-drive</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/168782-mandarons-icloud/</Support>
+  <Project>https://hub.docker.com/r/mandarons/icloud-drive</Project>
+  <Overview>iCloud Latest&#xD;
+Local copy iCloud documents and photos.&#xD;
+&#xD;
+Important&#xD;
+Run this command in the terminal.&#xD;
+&#xD;
+Create file&#xD;
+touch /your directory appdata/config.yaml&#xD;
+Example: "touch /mnt/user/appdata/icloud/config.yaml"&#xD;
+&#xD;
+Open file&#xD;
+sudo nano /your directory appdata/config.yaml&#xD;
+Example: "sudo nano /mnt/user/appdata/icloud/config.yaml"&#xD;
+&#xD;
+Copy and pasta this file "https://raw.githubusercontent.com/mandarons/icloud-drive-docker/main/config.yaml" in "sudo nano /your directory appdata/config.yaml" and set your config.&#xD;
+&#xD;
+Login with Two step autentication&#xD;
+Open docker console and enter&#xD;
+icloud --session-directory=/config/session_data --username=YOUR-ICLOUD-ID-EMAIL</Overview>
+  <Category>Backup:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/mandarons/icloud-drive-docker/master/unraid/icloud.xml</TemplateURL>
+  <Icon>https://help.apple.com/assets/60AD31069883FC55AC222539/60AD310B9883FC55AC22254A/de_DE/712e44cf3701cf5bc9580c9367fa5526.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725400638</DateInstalled>
+  <DonateText>To support this project, please consider sponsoring.</DonateText>
+  <DonateLink>https://github.com/sponsors/mandarons</DonateLink>
+  <Requires/>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/icloud" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/icloud</Config>
+  <Config Name="iCloud directory" Target="/icloud" Default="/mnt/user/iCloud" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/iCloud</Config>
+  <Config Name="iCloud App Password" Target="ENV_ICLOUD_PASSWORD" Default="" Mode="" Description="Create a icloud " Type="Variable" Display="always" Required="true" Mask="true">YOUR-APPLE-PASSWORD</Config>
+  <Config Name="Config file in container" Target="ENV_CONFIG_FILE_PATH" Default="/config/config.yaml" Mode="" Description="DO NOT CHANGE UNLESS YOU KNOW WHAT YOU'RE DOING!" Type="Variable" Display="always" Required="true" Mask="false">/config/config.yaml</Config>
+</Container>
