@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Ollama</Name>
+  <Repository>ollama/ollama</Repository>
+  <Registry>https://hub.docker.com/r/ollama/ollama/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/173032-my-unraid-by-brauliodiasribeiro/</Support>
+  <Project>https://hub.docker.com/r/ollama/ollama/</Project>
+  <Overview>Ollama Latest&#xD;
+Get up and running with large language models (LLM).&#xD;
+&#xD;
+Choose an option&#xD;
+With nVidia Support&#xD;
+set "Extra Parameters: --gpus=all"&#xD;
+&#xD;
+Without nVidia Support&#xD;
+"Extra Parameters:" leave empty</Overview>
+  <Category>AI: Other:</Category>
+  <WebUI>http://[IP]:[PORT:11434]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Joly0/docker-templates/master/templates/ollama.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_ollama.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725345732</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Config" Target="/root/.ollama" Default="/mnt/user/appdata/ollama" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ollama</Config>
+  <Config Name="WebUI" Target="11434" Default="11434" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">11434</Config>
+  <Config Name="OLLAMA_ORIGINS" Target="OLLAMA_ORIGINS" Default="*" Mode="" Description="Just set *" Type="Variable" Display="always" Required="true" Mask="false">*</Config>
+</Container>
+
+<!--
+Command
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='Ollama' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="BdrTec" -e HOST_CONTAINERNAME="Ollama" -e 'OLLAMA_ORIGINS'='*' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:11434]/' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_ollama.png' -p '11434:11434/tcp' -v '/mnt/user/appdata/ollama':'/root/.ollama':'rw' 'ollama/ollama'
+-->
