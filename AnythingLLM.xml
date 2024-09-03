@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>AnythingLLM</Name>
+  <Repository>mintplexlabs/anythingllm:latest</Repository>
+  <Registry>https://hub.docker.com/r/mintplexlabs/anythingllm</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/173032-my-unraid-by-brauliodiasribeiro</Support>
+  <Project>https://anythingllm.com/</Project>
+  <Overview>AnythingLLM Latest&#xD;
+A own WebUI application for AI. Any LLM, any document, any agent, fully private.&#xD;
+&#xD;
+Require&#xD;
+Some AI. Example: Ollama&#xD;
+&#xD;
+Information&#xD;
+Create following files before installing.&#xD;
+touch .env at /mnt/user/appdata/anythingllm/.env&#xD;
+touch anythingllm.db at /mnt/user/appdata/anythingllm/anythingllm.db&#xD;
+&#xD;
+Example config file: https://github.com/Mintplex-Labs/anything-llm/blob/master/docker/.env.example</Overview>
+  <Category>AI: Productivity: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:3001]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/templates/anything_llm.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_anythingllm.png</Icon>
+  <ExtraParams>--cap-add SYS_ADMIN</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725346491</DateInstalled>
+  <DonateText>If you like my work, please consider donating</DonateText>
+  <DonateLink>https://www.buymeacoffee.com/nwithan8</DonateLink>
+  <Requires>By https://bdrtec.com.br</Requires>
+  <Config Name="WebUI" Target="3001" Default="3001" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">3001</Config>
+  <Config Name="Environment File Path" Target="/app/server/.env" Default="/mnt/user/appdata/anythingllm/.env" Mode="rw" Description="Path to the environmental variable file. File must exist before running!" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/anythingllm/.env</Config>
+  <Config Name="In-container storage path" Target="STORAGE_DIR" Default="/app/server/storage" Mode="{3}" Description="In-container storage location. Do not change!" Type="Variable" Display="advanced" Required="true" Mask="false">/app/server/storage</Config>
+  <Config Name="Storage Path" Target="/app/server/storage" Default="/mnt/user/appdata/anythingllm" Mode="rw" Description="Storage for databases and file storage" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/anythingllm</Config>
+</Container>
+
+<!--
+Command
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='AnythingLLM' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="BdrTec" -e HOST_CONTAINERNAME="AnythingLLM" -e 'STORAGE_DIR'='/app/server/storage' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:3001]/' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_anythingllm.png' -p '3001:3001/tcp' -v '/mnt/user/appdata/anythingllm/.env':'/app/server/.env':'rw' -v '/mnt/user/appdata/anythingllm':'/app/server/storage':'rw' --cap-add SYS_ADMIN 'mintplexlabs/anythingllm:latest'
+-->
