@@ -42,3 +42,5 @@ https://bdrtec.com.br</Overview>
   <Config Name="LangFlow User" Target="LANGFLOW_SUPERUSER" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
   <Config Name="LangFlow Password" Target="LANGFLOW_SUPERUSER_PASSWORD" Default="langflow" Mode="" Description="Default: langflow" Type="Variable" Display="always" Required="true" Mask="false">langflow</Config>
 </Container>
+
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='LangFlow' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="BdrTec" -e HOST_CONTAINERNAME="LangFlow" -e 'LANGFLOW_DATABASE_URL'='postgresql://USER:PASSWORD@postgres:5432/langflow' -e 'LANGFLOW_SUPERUSER'='langflow' -e 'LANGFLOW_SUPERUSER_PASSWORD'='langflow' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:7860]' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid-Container-XML/main/favicon_langflow.png' -p '7860:7860/tcp' -v '/mnt/user/appdata/langflow/':'/var/lib/langflow':'rw' 'langflowai/langflow'
