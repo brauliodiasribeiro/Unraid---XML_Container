@@ -20,7 +20,8 @@ Create following files before installing.&#xD;
 touch .env at /mnt/user/appdata/anythingllm/.env&#xD;
 touch anythingllm.db at /mnt/user/appdata/anythingllm/anythingllm.db&#xD;
 &#xD;
-Example config file: https://github.com/Mintplex-Labs/anything-llm/blob/master/docker/.env.example</Overview>
+Example config file&#xD;
+https://github.com/Mintplex-Labs/anything-llm/blob/master/docker/.env.example</Overview>
   <Category>AI: Productivity: Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:3001]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/nwithan8/unraid_templates/master/templates/anything_llm.xml</TemplateURL>
@@ -28,7 +29,7 @@ Example config file: https://github.com/Mintplex-Labs/anything-llm/blob/master/d
   <ExtraParams>--cap-add SYS_ADMIN</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1725398771</DateInstalled>
+  <DateInstalled>1725398896</DateInstalled>
   <DonateText>If you like my work, please consider donating</DonateText>
   <DonateLink>https://www.buymeacoffee.com/nwithan8</DonateLink>
   <Requires/>
