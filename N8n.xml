@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>N8n</Name>
+  <Repository>n8nio/n8n</Repository>
+  <Registry>https://hub.docker.com/r/n8nio/n8n/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/173032-my-unraid-by-brauliodiasribeiro</Support>
+  <Project>https://n8n.io/</Project>
+  <Overview>LangFlow Latest&#xD;
+Is a free, no-code solution for deployment of powerful LLM apps.&#xD;
+Create flows dragging and connecting components.&#xD;
+&#xD;
+Requires&#xD;
+Postgres 16&#xD;
+&#xD;
+Important&#xD;
+Run this command in the terminal (chown 1000:1000  /your directory appdata)&#xD;
+Exemple: chown 1000:1000 /mnt/user/appdata/n8n&#xD;
+&#xD;
+Docker&#xD;
+https://hub.docker.com/r/langflowai/langflow&#xD;
+&#xD;
+Docs&#xD;
+https://github.com/langflow-ai/langflow/tree/dev/docker_example&#xD;
+https://docs.langflow.org&#xD;
+&#xD;
+By&#xD;
+https://bdrtec.com.br</Overview>
+  <Category>Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:5678]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tmchow/unraid-docker-templates/master/n8n.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_n8n.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725343394</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Timezone" Target="GENERIC_TIMEZONE" Default="America/Sao_Paulo" Mode="" Description="Find your location here https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" Type="Variable" Display="always" Required="true" Mask="false">America/Sao_Paulo</Config>
+  <Config Name="Appdata" Target="/home/node/.n8n" Default="/mnt/user/appdata/n8n" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/n8n</Config>
+  <Config Name="Webhook Tunnel" Target="WEBHOOK_URL" Default="http://192.168.1.254:5678/" Mode="" Description="Webhook URL (Unraid IP). Must have trailing slash (http://192.168.1.254:5678/)" Type="Variable" Display="always" Required="true" Mask="false">http://192.168.1.254:5678/</Config>
+  <Config Name="Port" Target="5678" Default="5678" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">5678</Config>
+  <Config Name="Cookie N8N" Target="N8N_SECURE_COOKIE" Default="false|true" Mode="" Description="Default: false" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+</Container>
+
+<!--
+Command
+/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker create --name='N8n' --net='bridge' -e TZ="America/Sao_Paulo" -e HOST_OS="Unraid" -e HOST_HOSTNAME="BdrTec" -e HOST_CONTAINERNAME="N8n" -e 'GENERIC_TIMEZONE'='America/Sao_Paulo' -e 'WEBHOOK_URL'='http://192.168.1.254:5678/' -e 'N8N_SECURE_COOKIE'='false' -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui='http://[IP]:[PORT:5678]/' -l net.unraid.docker.icon='https://raw.githubusercontent.com/brauliodiasribeiro/Unraid---XML_Container/main/favicon_n8n.png' -p '5678:5678/tcp' -v '/mnt/user/appdata/n8n':'/home/node/.n8n':'rw' --restart unless-stopped 'n8nio/n8n'
+-->
