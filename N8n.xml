@@ -9,12 +9,8 @@
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/173032-my-unraid-by-brauliodiasribeiro</Support>
   <Project>https://n8n.io/</Project>
-  <Overview>LangFlow Latest&#xD;
-Is a free, no-code solution for deployment of powerful LLM apps.&#xD;
-Create flows dragging and connecting components.&#xD;
-&#xD;
-Requires&#xD;
-Postgres 16&#xD;
+  <Overview>N8n Latest&#xD;
+Secure and AI-native workflow automation tool.&#xD;
 &#xD;
 Important&#xD;
 Run this command in the terminal (chown 1000:1000  /your directory appdata)&#xD;
@@ -26,7 +22,7 @@ Exemple: chown 1000:1000 /mnt/user/appdata/n8n</Overview>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1725343638</DateInstalled>
+  <DateInstalled>1725343757</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires>By https://bdrtec.com.br</Requires>
