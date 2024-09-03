@@ -18,17 +18,7 @@ Postgres 16&#xD;
 &#xD;
 Important&#xD;
 Run this command in the terminal (chown 1000:1000  /your directory appdata)&#xD;
-Exemple: chown 1000:1000 /mnt/user/appdata/n8n&#xD;
-&#xD;
-Docker&#xD;
-https://hub.docker.com/r/langflowai/langflow&#xD;
-&#xD;
-Docs&#xD;
-https://github.com/langflow-ai/langflow/tree/dev/docker_example&#xD;
-https://docs.langflow.org&#xD;
-&#xD;
-By&#xD;
-https://bdrtec.com.br</Overview>
+Exemple: chown 1000:1000 /mnt/user/appdata/n8n</Overview>
   <Category>Productivity:</Category>
   <WebUI>http://[IP]:[PORT:5678]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tmchow/unraid-docker-templates/master/n8n.xml</TemplateURL>
@@ -36,10 +26,10 @@ https://bdrtec.com.br</Overview>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1725343394</DateInstalled>
+  <DateInstalled>1725343638</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Requires/>
+  <Requires>By https://bdrtec.com.br</Requires>
   <Config Name="Timezone" Target="GENERIC_TIMEZONE" Default="America/Sao_Paulo" Mode="" Description="Find your location here https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" Type="Variable" Display="always" Required="true" Mask="false">America/Sao_Paulo</Config>
   <Config Name="Appdata" Target="/home/node/.n8n" Default="/mnt/user/appdata/n8n" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/n8n</Config>
   <Config Name="Webhook Tunnel" Target="WEBHOOK_URL" Default="http://192.168.1.254:5678/" Mode="" Description="Webhook URL (Unraid IP). Must have trailing slash (http://192.168.1.254:5678/)" Type="Variable" Display="always" Required="true" Mask="false">http://192.168.1.254:5678/</Config>
