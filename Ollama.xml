@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Ollama</Name>
+  <Repository>ollama/ollama</Repository>
+  <Registry>https://hub.docker.com/r/ollama/ollama/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>bash</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://hub.docker.com/r/ollama/ollama/</Support>
+  <Project>https://hub.docker.com/r/ollama/ollama/</Project>
+  <Overview>Ollama Latest&#xD;
+Get up and running with large language models (LLM).&#xD;
+&#xD;
+Choose an option&#xD;
+With nVidia Support&#xD;
+set "Extra Parameters: --gpus=all"&#xD;
+&#xD;
+Without nVidia Support&#xD;
+"Extra Parameters:" leave empty</Overview>
+  <Category>AI: Other:</Category>
+  <WebUI>http://[IP]:[PORT:11434]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Joly0/docker-templates/master/templates/ollama.xml</TemplateURL>
+  <Icon>https://ollama.ai/public/ollama.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1725400562</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Config" Target="/root/.ollama" Default="/mnt/user/appdata/ollama" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/ollama</Config>
+  <Config Name="WebUI" Target="11434" Default="11434" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">11434</Config>
+  <Config Name="OLLAMA_ORIGINS" Target="OLLAMA_ORIGINS" Default="*" Mode="" Description="Just set *" Type="Variable" Display="always" Required="true" Mask="false">*</Config>
+</Container>
